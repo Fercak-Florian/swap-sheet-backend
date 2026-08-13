@@ -12,7 +12,7 @@ RUN composer install \
     --prefer-dist \
     --no-interaction
 
-COPY . .
+COPY .. .
 
 RUN composer dump-autoload \
     --optimize \
@@ -33,6 +33,7 @@ RUN apk add --no-cache \
         unzip \
         git \
     && docker-php-ext-install \
+        pdo_mysql \
         intl \
         opcache \
         zip
