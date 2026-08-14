@@ -45,7 +45,7 @@ COPY --from=composer_build /app ./
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
 
-RUN php bin/console asset-map:compile
+#RUN php bin/console asset-map:compile
 
 RUN mkdir -p var/cache var/log
 RUN chown -R www-data:www-data var

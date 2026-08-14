@@ -19,7 +19,7 @@ services:
     container_name: symfony_php
     environment:
 #      APP_ENV: ${APP_ENV:-prod}
-          DATABASE_URL: mysql://symfony:symfony@database:3306/symfony_db?serverVersion=8.0
+          DATABASE_URL: mysql://symfony:symfony@database:3306/swap-sheet?serverVersion=8.0
     volumes:
       - symfony_public:/var/www/symfony/public
       # En dev, décommente la ligne suivante pour monter tout le code en live
@@ -35,7 +35,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: symfony_db
+      MYSQL_DATABASE: swap-sheet
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
     volumes:
