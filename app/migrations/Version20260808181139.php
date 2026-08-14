@@ -19,22 +19,23 @@ final class Version20260808181139 extends AbstractMigration
 
     public function up(Schema $schema): void
     {
-        $this->addSql('DROP TABLE tsp');
-
-        $this->addSql('CREATE TABLE tsp (
+        $this->addSql('CREATE TABLE IF NOT EXISTS tsp (
         id INT AUTO_INCREMENT NOT NULL,
         first_name VARCHAR(255) NOT NULL,
         last_name VARCHAR(255) NOT NULL,
         PRIMARY KEY (id)
-    ) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci`');
+        ) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci`');
 
         // Données initiales
         $this->addSql("
         INSERT INTO tsp (first_name, last_name)
         VALUES
-            ('Florian', 'Ferak'),
+            ('Florian', 'Fercak'),
             ('Vincent', 'Lacour'),
-            ('Olivier', 'Durand')
+            ('Alain', 'Hadj Messaoud'),
+            ('Pascal', 'Bouet'),
+            ('Rayan', 'Bouyassine')
+            ('Jeansi', 'Soumbou'),
     ");
     }
 
