@@ -1,12 +1,12 @@
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
+/app/.env.local
+/app/.env.local.php
+/app/.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/var/
-/vendor/
+/app/var/
+/app/vendor/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###
@@ -20,5 +20,5 @@
 ###< symfony/asset-mapper ###
 
 ###> IDE Files ###
-../.idea
+/.idea/
 ###< IDE Files ###

@@ -34,8 +34,8 @@ final class Version20260808181139 extends AbstractMigration
             ('Vincent', 'Lacour'),
             ('Alain', 'Hadj Messaoud'),
             ('Pascal', 'Bouet'),
-            ('Rayan', 'Bouyassine')
-            ('Jeansi', 'Soumbou'),
+            ('Rayan', 'Bouyassine'),
+            ('Jeansi', 'Soumbou')
     ");
     }
 
