@@ -20,5 +20,5 @@
 ###< symfony/asset-mapper ###
 
 ###> IDE Files ###
-/.idea/
+/.idea/*
 ###< IDE Files ###
