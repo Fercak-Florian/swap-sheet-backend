@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\DTO\TspDTO;
 use App\Entity\Tsp;
 use App\Repository\TspRepository;
 
@@ -11,10 +12,10 @@ class TspService
     {
     }
 
-    public function getAllTsp(): array
-    {
-        $array = $this->tspRepository->findAll();
-        return $this->setLastNameToUpper($array);
+    public function getAllTsp(): array {
+        $allTsp = $this->tspRepository->findAll();
+        $allTspWithLastnameInUpperCase = $this->setLastNameToUpper($allTsp);
+        return $this->mapToDtos($allTspWithLastnameInUpperCase);
     }
 
     private function setLastNameToUpper(array $array): array {
@@ -22,5 +23,18 @@ class TspService
             $tsp->setLastName(strtoupper($tsp->getLastName()));
         }
         return $array;
+    }
+
+    private function getTspDTO(Tsp $tsp): TspDTO {
+        return new TspDTO($tsp->getFirstName(), $tsp->getLastName());
+    }
+
+    private function mapToDtos(array $array): array {
+        $allTspDTO = [];
+        foreach ($array as $tsp) {
+            $tspDTO = $this->getTspDTO($tsp);
+            $allTspDTO[] = $tspDTO;
+        }
+        return $allTspDTO;
     }
 }
