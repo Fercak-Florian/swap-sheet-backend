@@ -38,6 +38,12 @@ services:
       MYSQL_DATABASE: swap-sheet
       MYSQL_USER: symfony
       MYSQL_PASSWORD: symfony
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     volumes:
       - symfony_db_data:/var/lib/mysql
     networks:
